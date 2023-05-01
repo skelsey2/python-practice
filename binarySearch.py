@@ -1,19 +1,33 @@
+# 2
 # Iterative Binary Search
 #  done on Sorted Arrays, generally
 #  2 pointers, one at the start and end
+# Recursive
 
 def binary_itr(arr, start, end, target):
     while start <= end:
         mid = (start + end) // 2
         if arr[mid] < target:
             start = mid + 1
-        
         elif arr[mid] > target:
-            end = mid - 1
-        
+            end = mid - 1        
         else:
             return mid
     return start
+
+def binary_itr2(arr, start, end, target):
+    while (start <= end):
+        mid = (start + end) // 2
+        if(arr[mid] < target): # Reads - if middle of array smaller than target
+            start = mid + 1 # cut off the smaller numbers by resetting the start number to mid +1
+        elif(arr[mid] > target): # Reads - if middle of the array bigger than target
+            end = mid -1    # cutt off the bigger numbers by resetting the start number to mid -1
+        else:
+            return mid
+    return start
+
+
+
 
 def binary_recur(arr, start, end, target):
     if end >= start:
@@ -28,9 +42,9 @@ def binary_recur(arr, start, end, target):
         return -1
 
 arr = [2,5, 8, 10, 16, 22, 25]
-target = 10
+target = 16
 
-result = binary_recur(arr, 0, len(arr)-1, target)
+result = binary_itr2(arr, 0, len(arr)-1, target)
 if result != -1:
     print("Element is present at index %d" % result)
 else:
