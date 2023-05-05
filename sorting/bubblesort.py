@@ -3,7 +3,7 @@
 def bubble_optimized(A):
     iterations = 0
     for i in range(len(A)):
-        for j in range(len(A) - i - 1):
+        for j in range(len(A) - i - 1): # adding the "-i" bcuz right side of array is already sorted, don't check again
             iterations += 1
             if A[j] > A[j+1]:
                 A[j], A[j+1] = A[j+1], A[j]
