@@ -1,4 +1,7 @@
 # Merge Sort - 5/1/2023
+#  og - Original
+#  Ex - Example
+#  Merge sort 
 #  Brute force - Took me a minute to understand as it looked like it was only working with the minimum value
 #                       then realizing the minimum value gets removed each iteration
 #  Merge Sort has a time complexity of O(n log n), which makes it an efficient sorting algorithm for large arrays.
